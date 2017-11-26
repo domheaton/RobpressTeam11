@@ -770,3 +770,9 @@
 [26-Nov-2017 19:17:38 UTC] PHP Parse error:  syntax error, unexpected '$check' (T_VARIABLE) in /home/team11/controllers/user.php on line 22
 [26-Nov-2017 19:17:38 UTC] Fatal error: syntax error, unexpected '$check' (T_VARIABLE)
 [26-Nov-2017 19:17:38 UTC] [controllers/user.php:22] 
+[26-Nov-2017 20:05:39 UTC] PHP Parse error:  syntax error, unexpected '$f3' (T_VARIABLE) in /home/team11/controllers/blog.php on line 112
+[26-Nov-2017 20:05:39 UTC] Fatal error: syntax error, unexpected '$f3' (T_VARIABLE)
+[26-Nov-2017 20:05:39 UTC] [controllers/blog.php:112] 
+[26-Nov-2017 20:05:59 UTC] PHP Parse error:  syntax error, unexpected '$ids' (T_VARIABLE) in /home/team11/controllers/blog.php on line 114
+[26-Nov-2017 20:05:59 UTC] Fatal error: syntax error, unexpected '$ids' (T_VARIABLE)
+[26-Nov-2017 20:05:59 UTC] [controllers/blog.php:114] 
