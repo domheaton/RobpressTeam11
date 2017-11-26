@@ -750,3 +750,23 @@
 [26-Nov-2017 17:34:23 UTC] HTTP 404 (GET /test.php)
 [26-Nov-2017 17:34:23 UTC] [lib/base.php:1574] Base->error()
 [26-Nov-2017 17:34:23 UTC] [index.php:34] Base->run()
+[26-Nov-2017 17:38:58 UTC] Missing argument 3 for AuthHelper::checkLogin(), called in /home/team11/controllers/user.php on line 57 and defined
+[26-Nov-2017 17:38:58 UTC] [lib/base.php:2178] Base->error()
+[26-Nov-2017 17:38:58 UTC] [helpers/authhelper.php:25] Base->{closure}()
+[26-Nov-2017 17:38:58 UTC] [controllers/user.php:57] AuthHelper->checkLogin()
+[26-Nov-2017 17:38:58 UTC] [lib/base.php:1791] call_user_func_array()
+[26-Nov-2017 17:38:58 UTC] [lib/base.php:1612] Base->call()
+[26-Nov-2017 17:38:58 UTC] [index.php:34] Base->run()
+[26-Nov-2017 18:20:10 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/team11/controllers/user.php on line 21
+[26-Nov-2017 18:20:10 UTC] Fatal error: syntax error, unexpected 'if' (T_IF)
+[26-Nov-2017 18:20:10 UTC] [controllers/user.php:21] 
+[26-Nov-2017 18:44:58 UTC] PHP Fatal error:  Call to a member function clean() on a non-object in /home/team11/view/navbar.htm on line 26
+[26-Nov-2017 18:44:58 UTC] Fatal error: Call to a member function clean() on a non-object
+[26-Nov-2017 18:44:58 UTC] [view/navbar.htm:26] 
+[26-Nov-2017 18:44:58 UTC] PHP Fatal error:  Call to a member function clean() on a non-object in /home/team11/view/navbar.htm on line 26
+[26-Nov-2017 19:02:53 UTC] PHP Fatal error:  Call to a member function clean() on a non-object in /home/team11/view/User/add.htm on line 22
+[26-Nov-2017 19:02:53 UTC] Fatal error: Call to a member function clean() on a non-object
+[26-Nov-2017 19:02:53 UTC] [view/User/add.htm:22] 
+[26-Nov-2017 19:17:38 UTC] PHP Parse error:  syntax error, unexpected '$check' (T_VARIABLE) in /home/team11/controllers/user.php on line 22
+[26-Nov-2017 19:17:38 UTC] Fatal error: syntax error, unexpected '$check' (T_VARIABLE)
+[26-Nov-2017 19:17:38 UTC] [controllers/user.php:22] 
