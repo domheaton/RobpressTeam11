@@ -705,3 +705,48 @@
 [22-Nov-2017 10:05:07 UTC] HTTP 404 (GET /favicon.ico)
 [22-Nov-2017 10:05:07 UTC] [lib/base.php:1470] Base->error(404)
 [22-Nov-2017 10:05:07 UTC] [index.php:34] Base->run()
+[22-Nov-2017 10:50:44 UTC] HTTP 404 (GET /git)
+[22-Nov-2017 10:50:44 UTC] [lib/base.php:1574] Base->error()
+[22-Nov-2017 10:50:44 UTC] [index.php:34] Base->run()
+[22-Nov-2017 10:58:48 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/team11/controllers/blog.php on line 113
+[22-Nov-2017 10:58:48 UTC] Fatal error: syntax error, unexpected ':', expecting ')'
+[22-Nov-2017 10:58:48 UTC] [controllers/blog.php:113] 
+[22-Nov-2017 11:00:31 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ')' in /home/team11/controllers/blog.php on line 113
+[22-Nov-2017 11:00:31 UTC] Fatal error: syntax error, unexpected ':', expecting ')'
+[22-Nov-2017 11:00:31 UTC] [controllers/blog.php:113] 
+[22-Nov-2017 11:25:05 UTC] PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[22-Nov-2017 11:25:05 UTC] [lib/base.php:2178] Base->error()
+[22-Nov-2017 11:25:05 UTC] [lib/db/sql.php:226] PDOStatement->execute()
+[22-Nov-2017 11:25:05 UTC] [controllers/blog.php:113] DB\SQL->exec()
+[22-Nov-2017 11:25:05 UTC] [lib/base.php:1791] call_user_func_array()
+[22-Nov-2017 11:25:05 UTC] [lib/base.php:1612] Base->call()
+[22-Nov-2017 11:25:05 UTC] [index.php:34] Base->run()
+[22-Nov-2017 11:25:46 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/team11/controllers/blog.php on line 113
+[22-Nov-2017 11:25:46 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+[22-Nov-2017 11:25:46 UTC] [controllers/blog.php:113] 
+[22-Nov-2017 11:28:03 UTC] PDOStatement: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'' at line 1
+[22-Nov-2017 11:28:03 UTC] [lib/base.php:2178] Base->error()
+[22-Nov-2017 11:28:03 UTC] [lib/db/sql.php:236] user_error()
+[22-Nov-2017 11:28:03 UTC] [controllers/blog.php:111] DB\SQL->exec()
+[22-Nov-2017 11:28:03 UTC] [lib/base.php:1791] call_user_func_array()
+[22-Nov-2017 11:28:03 UTC] [lib/base.php:1612] Base->call()
+[22-Nov-2017 11:28:03 UTC] [index.php:34] Base->run()
+[22-Nov-2017 11:30:41 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/team11/controllers/blog.php on line 113
+[22-Nov-2017 11:30:41 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+[22-Nov-2017 11:30:41 UTC] [controllers/blog.php:113] 
+[22-Nov-2017 11:32:31 UTC] PDOStatement: Unknown column 'search' in 'where clause'
+[22-Nov-2017 11:32:31 UTC] [lib/base.php:2178] Base->error()
+[22-Nov-2017 11:32:31 UTC] [lib/db/sql.php:236] user_error()
+[22-Nov-2017 11:32:31 UTC] [controllers/blog.php:113] DB\SQL->exec()
+[22-Nov-2017 11:32:31 UTC] [lib/base.php:1791] call_user_func_array()
+[22-Nov-2017 11:32:31 UTC] [lib/base.php:1612] Base->call()
+[22-Nov-2017 11:32:31 UTC] [index.php:34] Base->run()
+[26-Nov-2017 17:33:44 UTC] HTTP 404 (GET /setup)
+[26-Nov-2017 17:33:44 UTC] [lib/base.php:1574] Base->error()
+[26-Nov-2017 17:33:44 UTC] [index.php:34] Base->run()
+[26-Nov-2017 17:33:54 UTC] HTTP 404 (GET /phpinfo.php)
+[26-Nov-2017 17:33:54 UTC] [lib/base.php:1574] Base->error()
+[26-Nov-2017 17:33:54 UTC] [index.php:34] Base->run()
+[26-Nov-2017 17:34:23 UTC] HTTP 404 (GET /test.php)
+[26-Nov-2017 17:34:23 UTC] [lib/base.php:1574] Base->error()
+[26-Nov-2017 17:34:23 UTC] [index.php:34] Base->run()
