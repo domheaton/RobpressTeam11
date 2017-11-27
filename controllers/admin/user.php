@@ -6,10 +6,12 @@ class User extends AdminController {
 
 	public function index($f3) {
 		$users = $this->Model->Users->fetchAll();
-		$f3->set('users',$users);
+		// $f3->set('users',$users);
+		// XSS VULNERABILITY
+		$f3->set('users',$f3->clean($users));
 	}
 
-	public function edit($f3) {	
+	public function edit($f3) {
 		$id = $f3->get('PARAMS.3');
 		$u = $this->Model->Users->fetch($id);
 		if($this->request->is('post')) {
@@ -18,7 +20,7 @@ class User extends AdminController {
 			$u->save();
 			\StatusMessage::add('User updated succesfully','success');
 			return $f3->reroute('/admin/user');
-		}			
+		}
 		$_POST = $u->cast();
 		$f3->set('u',$u);
 	}

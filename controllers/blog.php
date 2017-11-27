@@ -107,14 +107,16 @@ class Blog extends Controller {
 			$f3->set('search',$search);
 
 			//Get search results
+			// XSS VULNERABILITY
 			// $search = str_replace("*","%",$search); //Allow * as wildcard
-
-			// XSS VULERNERABILITY
 			$tempsearch = str_replace("*","%",$search);
 			$search = $f3->clean($tempsearch);
 
+			// SQL VULNERABILITY
 			$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
-			// Attempt to fix SQL-Injection // $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%search%\" /*OR `content` LIKE '%$search%'*/");
+			// Attempt to fix SQL-Injection //
+			// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE :search OR `content` LIKE :search2", array('search'=>$search, 'search2'=>$search));
+
 			$ids = Hash::extract($ids,'{n}.id');
 			if(empty($ids)) {
 				StatusMessage::add('No search results found for ' . $search);

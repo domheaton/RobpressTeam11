@@ -15,8 +15,11 @@ class Comment extends AdminController {
 		$moderated = $this->Model->map($mod ,'user_id','Users');
 		$moderated = $this->Model->map($mod ,'blog_id','Posts',true,$moderated);
 
-		$f3->set('unmoderated',$unmoderated);
-		$f3->set('moderated',$moderated);
+		// $f3->set('unmoderated',$unmoderated);
+		// $f3->set('moderated',$moderated);
+		// XSS VULNERABILITY
+		$f3->set('unmoderated',$f3->clean($unmoderated));
+		$f3->set('moderated',$f3->clean($moderated));
 	}
 
 	public function edit($f3) {
@@ -27,7 +30,7 @@ class Comment extends AdminController {
 			$comment->save();
 			\StatusMessage::add('Comment updated succesfully','success');
 			return $f3->reroute('/admin/comment');
-		} 
+		}
 		$_POST = $comment;
 		$f3->set('comment',$comment);
 	}

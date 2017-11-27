@@ -776,3 +776,328 @@
 [26-Nov-2017 20:05:59 UTC] PHP Parse error:  syntax error, unexpected '$ids' (T_VARIABLE) in /home/team11/controllers/blog.php on line 114
 [26-Nov-2017 20:05:59 UTC] Fatal error: syntax error, unexpected '$ids' (T_VARIABLE)
 [26-Nov-2017 20:05:59 UTC] [controllers/blog.php:114] 
+[27-Nov-2017 12:11:10 UTC] PDOStatement: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'XSS')%'' at line 1
+[27-Nov-2017 12:11:10 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:11:10 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 12:11:10 UTC] [controllers/blog.php:116] DB\SQL->exec()
+[27-Nov-2017 12:11:10 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 12:11:10 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:11:10 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:14:18 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/admin/blog.php on line 116
+[27-Nov-2017 12:14:18 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 12:14:18 UTC] [controllers/admin/blog.php:116] 
+[27-Nov-2017 12:14:18 UTC] HTTP 404 (GET /admin/favicon.ico)
+[27-Nov-2017 12:14:18 UTC] [lib/base.php:1574] Base->error()
+[27-Nov-2017 12:14:18 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:18:59 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/admin/blog.php on line 120
+[27-Nov-2017 12:18:59 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 12:18:59 UTC] [controllers/admin/blog.php:120] 
+[27-Nov-2017 12:19:02 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/admin/blog.php on line 120
+[27-Nov-2017 12:19:02 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 12:19:02 UTC] [controllers/admin/blog.php:120] 
+[27-Nov-2017 12:19:11 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/admin/blog.php on line 120
+[27-Nov-2017 12:19:11 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 12:19:11 UTC] [controllers/admin/blog.php:120] 
+[27-Nov-2017 12:45:42 UTC] touch(): Unable to create file /home/team11/pages/&lt;marquee&gt;testxss&lt;/marquee&gt;.html because No such file or directory
+[27-Nov-2017 12:45:42 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:45:42 UTC] [models/pagesmodel.php:8] touch()
+[27-Nov-2017 12:45:42 UTC] [controllers/admin/page.php:15] PagesModel->create()
+[27-Nov-2017 12:45:42 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 12:45:42 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:45:42 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:46:43 UTC] unlink(/home/team11/pages/): Is a directory
+[27-Nov-2017 12:46:43 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:46:43 UTC] [models/pagesmodel.php:19] unlink()
+[27-Nov-2017 12:46:43 UTC] [controllers/admin/page.php:42] PagesModel->delete()
+[27-Nov-2017 12:46:43 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 12:46:43 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:46:43 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:47:11 UTC] unlink(/home/team11/pages/): Is a directory
+[27-Nov-2017 12:47:11 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:47:11 UTC] [models/pagesmodel.php:19] unlink()
+[27-Nov-2017 12:47:11 UTC] [controllers/admin/page.php:42] PagesModel->delete()
+[27-Nov-2017 12:47:11 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 12:47:11 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:47:11 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:50:26 UTC] HTTP 404 (GET /blog.php)
+[27-Nov-2017 12:50:26 UTC] [lib/base.php:1574] Base->error()
+[27-Nov-2017 12:50:26 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:52:47 UTC] Unable to open Blog/comment.htm
+[27-Nov-2017 12:52:47 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:52:47 UTC] [lib/base.php:2740] user_error()
+[27-Nov-2017 12:52:47 UTC] [controllers/controller.php:91] View->render()
+[27-Nov-2017 12:52:47 UTC] [lib/base.php:1797] call_user_func_array()
+[27-Nov-2017 12:52:47 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:52:47 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:52:55 UTC] Unable to open Blog/comment.htm
+[27-Nov-2017 12:52:55 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:52:55 UTC] [lib/base.php:2740] user_error()
+[27-Nov-2017 12:52:55 UTC] [controllers/controller.php:91] View->render()
+[27-Nov-2017 12:52:55 UTC] [lib/base.php:1797] call_user_func_array()
+[27-Nov-2017 12:52:55 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:52:55 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:52:57 UTC] Unable to open Blog/comment.htm
+[27-Nov-2017 12:52:57 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:52:57 UTC] [lib/base.php:2740] user_error()
+[27-Nov-2017 12:52:57 UTC] [controllers/controller.php:91] View->render()
+[27-Nov-2017 12:52:57 UTC] [lib/base.php:1797] call_user_func_array()
+[27-Nov-2017 12:52:57 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:52:57 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:53:10 UTC] HTTP 404 (GET /comment)
+[27-Nov-2017 12:53:10 UTC] [lib/base.php:1574] Base->error()
+[27-Nov-2017 12:53:10 UTC] [index.php:34] Base->run()
+[27-Nov-2017 12:54:10 UTC] unlink(/home/team11/pages/): Is a directory
+[27-Nov-2017 12:54:10 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 12:54:10 UTC] [models/pagesmodel.php:19] unlink()
+[27-Nov-2017 12:54:10 UTC] [controllers/admin/page.php:42] PagesModel->delete()
+[27-Nov-2017 12:54:10 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 12:54:10 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 12:54:10 UTC] [index.php:34] Base->run()
+[27-Nov-2017 13:02:40 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/team11/controllers/admin/comment.php on line 19
+[27-Nov-2017 13:02:40 UTC] Fatal error: syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+[27-Nov-2017 13:02:40 UTC] [controllers/admin/comment.php:19] 
+[27-Nov-2017 14:35:08 UTC] PDOStatement: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'' at line 1
+[27-Nov-2017 14:35:08 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 14:35:08 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 14:35:08 UTC] [controllers/blog.php:116] DB\SQL->exec()
+[27-Nov-2017 14:35:08 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 14:35:08 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 14:35:08 UTC] [index.php:34] Base->run()
+[27-Nov-2017 14:41:12 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/team11/controllers/blog.php on line 118
+[27-Nov-2017 14:41:12 UTC] Fatal error: syntax error, unexpected ','
+[27-Nov-2017 14:41:12 UTC] [controllers/blog.php:118] 
+[27-Nov-2017 14:42:14 UTC] PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[27-Nov-2017 14:42:14 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 14:42:14 UTC] [lib/db/sql.php:226] PDOStatement->execute()
+[27-Nov-2017 14:42:14 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 14:42:14 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 14:42:14 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 14:42:14 UTC] [index.php:34] Base->run()
+[27-Nov-2017 14:43:33 UTC] PHP Parse error:  syntax error, unexpected '$ids' (T_VARIABLE) in /home/team11/controllers/blog.php on line 119
+[27-Nov-2017 14:43:33 UTC] Fatal error: syntax error, unexpected '$ids' (T_VARIABLE)
+[27-Nov-2017 14:43:33 UTC] [controllers/blog.php:119] 
+[27-Nov-2017 14:49:09 UTC] PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[27-Nov-2017 14:49:09 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 14:49:09 UTC] [lib/db/sql.php:226] PDOStatement->execute()
+[27-Nov-2017 14:49:09 UTC] [controllers/blog.php:120] DB\SQL->exec()
+[27-Nov-2017 14:49:09 UTC] [utility/mock.php:110] call_user_func()
+[27-Nov-2017 14:49:09 UTC] [controllers/selftest.php:380] Mock->run()
+[27-Nov-2017 14:49:09 UTC] [controllers/selftest.php:92] call_user_func()
+[27-Nov-2017 14:49:09 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 14:49:09 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 14:49:09 UTC] [index.php:34] Base->run()
+[27-Nov-2017 14:49:43 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/team11/controllers/blog.php on line 120
+[27-Nov-2017 14:49:43 UTC] Fatal error: syntax error, unexpected ';'
+[27-Nov-2017 14:49:43 UTC] [controllers/blog.php:120] 
+[27-Nov-2017 14:53:14 UTC] PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[27-Nov-2017 14:53:14 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 14:53:14 UTC] [lib/db/sql.php:226] PDOStatement->execute()
+[27-Nov-2017 14:53:14 UTC] [controllers/blog.php:120] DB\SQL->exec()
+[27-Nov-2017 14:53:14 UTC] [utility/mock.php:110] call_user_func()
+[27-Nov-2017 14:53:14 UTC] [controllers/selftest.php:380] Mock->run()
+[27-Nov-2017 14:53:14 UTC] [controllers/selftest.php:92] call_user_func()
+[27-Nov-2017 14:53:14 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 14:53:14 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 14:53:14 UTC] [index.php:34] Base->run()
+[27-Nov-2017 15:00:12 UTC] PDOStatement: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'' at line 1
+[27-Nov-2017 15:00:12 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 15:00:12 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 15:00:12 UTC] [controllers/blog.php:116] DB\SQL->exec()
+[27-Nov-2017 15:00:12 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 15:00:12 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 15:00:12 UTC] [index.php:34] Base->run()
+[27-Nov-2017 15:03:40 UTC] PHP Parse error:  syntax error, unexpected '$ids' (T_VARIABLE), expecting ',' or ';' in /home/team11/controllers/blog.php on line 121
+[27-Nov-2017 15:03:40 UTC] Fatal error: syntax error, unexpected '$ids' (T_VARIABLE), expecting ',' or ';'
+[27-Nov-2017 15:03:40 UTC] [controllers/blog.php:121] 
+[27-Nov-2017 15:15:18 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/team11/controllers/blog.php on line 118
+[27-Nov-2017 15:15:18 UTC] Fatal error: Call to a member function prepare() on a non-object
+[27-Nov-2017 15:15:18 UTC] [controllers/blog.php:118] 
+[27-Nov-2017 15:16:06 UTC] Argument 1 passed to Hash::extract() must be of the type array, object given, called in /home/team11/controllers/blog.php on line 123 and defined
+[27-Nov-2017 15:16:06 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 15:16:06 UTC] [helpers/hash.php:90] Base->{closure}()
+[27-Nov-2017 15:16:06 UTC] [controllers/blog.php:123] Hash::extract()
+[27-Nov-2017 15:16:06 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 15:16:06 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 15:16:06 UTC] [index.php:34] Base->run()
+[27-Nov-2017 15:17:08 UTC] PHP Fatal error:  Call to undefined method PDOStatement::bind_param() in /home/team11/controllers/blog.php on line 119
+[27-Nov-2017 15:17:08 UTC] Fatal error: Call to undefined method PDOStatement::bind_param()
+[27-Nov-2017 15:17:08 UTC] [controllers/blog.php:119] 
+[27-Nov-2017 15:23:19 UTC] Argument 1 passed to Hash::extract() must be of the type array, object given, called in /home/team11/controllers/blog.php on line 122 and defined
+[27-Nov-2017 15:23:19 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 15:23:19 UTC] [helpers/hash.php:90] Base->{closure}()
+[27-Nov-2017 15:23:19 UTC] [controllers/blog.php:122] Hash::extract()
+[27-Nov-2017 15:23:19 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 15:23:19 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 15:23:19 UTC] [index.php:34] Base->run()
+[27-Nov-2017 15:30:24 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/team11/controllers/blog.php on line 118
+[27-Nov-2017 15:30:24 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+[27-Nov-2017 15:30:24 UTC] [controllers/blog.php:118] 
+[27-Nov-2017 15:57:23 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/user.php on line 124
+[27-Nov-2017 15:57:23 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 15:57:23 UTC] [controllers/user.php:124] 
+[27-Nov-2017 15:57:30 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/user.php on line 124
+[27-Nov-2017 15:57:30 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 15:57:30 UTC] [controllers/user.php:124] 
+[27-Nov-2017 15:57:41 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/user.php on line 124
+[27-Nov-2017 15:57:41 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 15:57:41 UTC] [controllers/user.php:124] 
+[27-Nov-2017 15:59:15 UTC] PHP Fatal error:  Call to a member function cast() on a non-object in /home/team11/controllers/user.php on line 124
+[27-Nov-2017 15:59:15 UTC] Fatal error: Call to a member function cast() on a non-object
+[27-Nov-2017 15:59:15 UTC] [controllers/user.php:124] 
+[27-Nov-2017 16:30:20 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/team11/utility/file.php on line 39
+[27-Nov-2017 16:30:20 UTC] Fatal error: syntax error, unexpected '}'
+[27-Nov-2017 16:30:20 UTC] [utility/file.php:39] 
+[27-Nov-2017 17:42:57 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/team11/utility/file.php on line 40
+[27-Nov-2017 17:42:57 UTC] Fatal error: syntax error, unexpected '<'
+[27-Nov-2017 17:42:57 UTC] [utility/file.php:40] 
+[27-Nov-2017 18:10:56 UTC] move_uploaded_file(): The second argument to copy() function cannot be a directory
+[27-Nov-2017 18:10:56 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:10:56 UTC] [utility/file.php:72] move_uploaded_file()
+[27-Nov-2017 18:10:56 UTC] [controllers/user.php:114] File::Upload()
+[27-Nov-2017 18:10:56 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:10:56 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:10:56 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:14:57 UTC] move_uploaded_file(): The second argument to copy() function cannot be a directory
+[27-Nov-2017 18:14:57 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:14:57 UTC] [utility/file.php:73] move_uploaded_file()
+[27-Nov-2017 18:14:57 UTC] [controllers/user.php:114] File::Upload()
+[27-Nov-2017 18:14:57 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:14:57 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:14:57 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:17:19 UTC] move_uploaded_file(): The second argument to copy() function cannot be a directory
+[27-Nov-2017 18:17:19 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:17:19 UTC] [utility/file.php:73] move_uploaded_file()
+[27-Nov-2017 18:17:19 UTC] [controllers/user.php:114] File::Upload()
+[27-Nov-2017 18:17:19 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:17:19 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:17:19 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:17:48 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/team11/utility/file.php on line 108
+[27-Nov-2017 18:17:48 UTC] Fatal error: syntax error, unexpected '}'
+[27-Nov-2017 18:17:48 UTC] [utility/file.php:108] 
+[27-Nov-2017 18:18:13 UTC] move_uploaded_file(): The second argument to copy() function cannot be a directory
+[27-Nov-2017 18:18:13 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:18:13 UTC] [utility/file.php:73] move_uploaded_file()
+[27-Nov-2017 18:18:13 UTC] [controllers/user.php:114] File::Upload()
+[27-Nov-2017 18:18:13 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:18:13 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:18:13 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:41:34 UTC] mysqli_real_escape_string() expects parameter 1 to be mysqli, null given
+[27-Nov-2017 18:41:34 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:41:34 UTC] [controllers/blog.php:118] mysqli_real_escape_string()
+[27-Nov-2017 18:41:34 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:41:34 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:41:34 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:47:57 UTC] mysqli_real_escape_string() expects parameter 1 to be mysqli, object given
+[27-Nov-2017 18:47:57 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:47:57 UTC] [controllers/blog.php:118] mysqli_real_escape_string()
+[27-Nov-2017 18:47:57 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:47:57 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:47:57 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:48:58 UTC] mysqli_real_escape_string() expects parameter 1 to be mysqli, object given
+[27-Nov-2017 18:48:58 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:48:58 UTC] [controllers/blog.php:118] mysqli_real_escape_string()
+[27-Nov-2017 18:48:58 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:48:58 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:48:58 UTC] [index.php:34] Base->run()
+[27-Nov-2017 18:59:48 UTC] Argument 1 passed to Hash::extract() must be of the type array, boolean given, called in /home/team11/controllers/blog.php on line 122 and defined
+[27-Nov-2017 18:59:48 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 18:59:48 UTC] [helpers/hash.php:90] Base->{closure}()
+[27-Nov-2017 18:59:48 UTC] [controllers/blog.php:122] Hash::extract()
+[27-Nov-2017 18:59:48 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 18:59:48 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 18:59:48 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:01:31 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/team11/controllers/blog.php on line 118
+[27-Nov-2017 19:01:31 UTC] Fatal error: syntax error, unexpected ':'
+[27-Nov-2017 19:01:31 UTC] [controllers/blog.php:118] 
+[27-Nov-2017 19:03:15 UTC] PDOStatement: Unknown column ''hello'' in 'where clause'
+[27-Nov-2017 19:03:15 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:03:15 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:03:15 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:03:15 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:03:15 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:03:15 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:03:57 UTC] PDOStatement: Unknown column ''$search'' in 'where clause'
+[27-Nov-2017 19:03:57 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:03:57 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:03:57 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:03:57 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:03:57 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:03:57 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:05:03 UTC] PDOStatement: Unknown column '':search'' in 'where clause'
+[27-Nov-2017 19:05:03 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:05:03 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:05:03 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:05:03 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:05:03 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:05:03 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:11:40 UTC] PDOStatement: Unknown column '':search'' in 'where clause'
+[27-Nov-2017 19:11:40 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:11:40 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:11:40 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:11:40 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:11:40 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:11:40 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:12:48 UTC] PDOStatement: Unknown column ''hello'' in 'where clause'
+[27-Nov-2017 19:12:48 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:12:48 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:12:48 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:12:48 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:12:48 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:12:48 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:13:46 UTC] PDOStatement: Unknown column '"%:search%"' in 'where clause'
+[27-Nov-2017 19:13:46 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:13:46 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:13:46 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:13:46 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:13:46 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:13:46 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:14:24 UTC] PDOStatement: Unknown column '%':search2'%' in 'where clause'
+[27-Nov-2017 19:14:24 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:14:24 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:14:24 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:14:24 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:14:24 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:14:24 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:14:47 UTC] PDOStatement: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'`:search2`'%' at line 1
+[27-Nov-2017 19:14:47 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:14:47 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:14:47 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:14:47 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:14:47 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:14:47 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:16:11 UTC] PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[27-Nov-2017 19:16:11 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:16:11 UTC] [lib/db/sql.php:226] PDOStatement->execute()
+[27-Nov-2017 19:16:11 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:16:11 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:16:11 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:16:11 UTC] [index.php:34] Base->run()
+[27-Nov-2017 19:16:34 UTC] PDOStatement: Unknown column ''hello'' in 'where clause'
+[27-Nov-2017 19:16:34 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 19:16:34 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 19:16:34 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 19:16:34 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 19:16:34 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 19:16:34 UTC] [index.php:34] Base->run()
+[27-Nov-2017 20:14:50 UTC] PDOStatement: Unknown column ''hello'' in 'where clause'
+[27-Nov-2017 20:14:50 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 20:14:50 UTC] [lib/db/sql.php:236] user_error()
+[27-Nov-2017 20:14:50 UTC] [controllers/blog.php:118] DB\SQL->exec()
+[27-Nov-2017 20:14:50 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 20:14:50 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 20:14:50 UTC] [index.php:34] Base->run()
+[27-Nov-2017 20:35:23 UTC] mysql_real_escape_string(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead
+[27-Nov-2017 20:35:23 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 20:35:23 UTC] [controllers/blog.php:118] mysql_real_escape_string()
+[27-Nov-2017 20:35:23 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 20:35:23 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 20:35:23 UTC] [index.php:34] Base->run()
+[27-Nov-2017 20:35:39 UTC] mysqli_real_escape_string() expects exactly 2 parameters, 1 given
+[27-Nov-2017 20:35:39 UTC] [lib/base.php:2178] Base->error()
+[27-Nov-2017 20:35:39 UTC] [controllers/blog.php:118] mysqli_real_escape_string()
+[27-Nov-2017 20:35:39 UTC] [lib/base.php:1791] call_user_func_array()
+[27-Nov-2017 20:35:39 UTC] [lib/base.php:1612] Base->call()
+[27-Nov-2017 20:35:39 UTC] [index.php:34] Base->run()
+[27-Nov-2017 20:41:09 UTC] PHP Fatal error:  Call to a member function bind_param() on a non-object in /home/team11/controllers/blog.php on line 120
+[27-Nov-2017 20:41:09 UTC] Fatal error: Call to a member function bind_param() on a non-object
+[27-Nov-2017 20:41:09 UTC] [controllers/blog.php:120] 
