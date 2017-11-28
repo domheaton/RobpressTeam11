@@ -1101,3 +1101,246 @@
 [27-Nov-2017 20:41:09 UTC] PHP Fatal error:  Call to a member function bind_param() on a non-object in /home/team11/controllers/blog.php on line 120
 [27-Nov-2017 20:41:09 UTC] Fatal error: Call to a member function bind_param() on a non-object
 [27-Nov-2017 20:41:09 UTC] [controllers/blog.php:120] 
+[28-Nov-2017 11:19:29 UTC] CAPTCHA font not found
+[28-Nov-2017 11:19:29 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:19:29 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:19:29 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:19:29 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:19:29 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:19:29 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:19:29 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:19:29 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:19:29 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:19:47 UTC] CAPTCHA font not found
+[28-Nov-2017 11:19:47 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:19:47 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:19:47 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:19:47 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:19:47 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:19:47 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:19:47 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:19:47 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:19:47 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:39:03 UTC] CAPTCHA font not found
+[28-Nov-2017 11:39:03 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:39:03 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:39:03 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:39:03 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:39:03 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:39:03 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:39:03 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:39:03 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:39:03 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:40:47 UTC] CAPTCHA font not found
+[28-Nov-2017 11:40:47 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:40:47 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:40:47 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:40:47 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:40:47 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:40:47 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:40:47 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:40:47 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:40:47 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:41:09 UTC] CAPTCHA font not found
+[28-Nov-2017 11:41:09 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:41:09 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:41:09 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:41:09 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:41:09 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:41:09 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:41:09 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:41:09 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:41:09 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:43:34 UTC] CAPTCHA font not found
+[28-Nov-2017 11:43:34 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:43:34 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:43:34 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:43:34 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:43:34 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:43:34 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:43:34 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:43:34 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:43:34 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:43:37 UTC] CAPTCHA font not found
+[28-Nov-2017 11:43:37 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:43:37 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:43:37 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:43:37 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:43:37 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:43:37 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:43:37 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:43:37 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:43:37 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:47:04 UTC] CAPTCHA font not found
+[28-Nov-2017 11:47:04 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:47:04 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:47:04 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:47:04 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:47:04 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:47:04 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:47:04 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:47:04 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:47:04 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:47:39 UTC] CAPTCHA font not found
+[28-Nov-2017 11:47:39 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:47:39 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:47:39 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:47:39 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:47:39 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:47:39 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:47:39 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:47:39 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:47:39 UTC] [index.php:34] Base->run()
+[28-Nov-2017 11:48:35 UTC] CAPTCHA font not found
+[28-Nov-2017 11:48:35 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 11:48:35 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 11:48:35 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 11:48:35 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 11:48:35 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 11:48:35 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 11:48:35 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 11:48:35 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 11:48:35 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:02:16 UTC] CAPTCHA font not found
+[28-Nov-2017 12:02:16 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 12:02:16 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 12:02:16 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 12:02:16 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 12:02:16 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 12:02:16 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 12:02:16 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 12:02:16 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:02:16 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:03:44 UTC] CAPTCHA font not found
+[28-Nov-2017 12:03:44 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 12:03:44 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 12:03:44 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 12:03:44 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 12:03:44 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 12:03:44 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 12:03:44 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 12:03:44 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:03:44 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:05:45 UTC] CAPTCHA font not found
+[28-Nov-2017 12:05:45 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 12:05:45 UTC] [lib/image.php:454] user_error()
+[28-Nov-2017 12:05:45 UTC] [view/User/login.htm:12] Image->captcha()
+[28-Nov-2017 12:05:45 UTC] [lib/base.php:2708] require('/home/team11/view/User/login.htm')
+[28-Nov-2017 12:05:45 UTC] [lib/base.php:2732] View->sandbox()
+[28-Nov-2017 12:05:45 UTC] [controllers/controller.php:91] View->render()
+[28-Nov-2017 12:05:45 UTC] [lib/base.php:1797] call_user_func_array()
+[28-Nov-2017 12:05:45 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:05:45 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:09:41 UTC] PHP Parse error:  syntax error, unexpected 'g' (T_STRING), expecting ',' or ';' in /home/team11/view/User/login.htm on line 12
+[28-Nov-2017 12:09:41 UTC] Fatal error: syntax error, unexpected 'g' (T_STRING), expecting ',' or ';'
+[28-Nov-2017 12:09:41 UTC] [view/User/login.htm:12] 
+[28-Nov-2017 12:10:24 UTC] PHP Fatal error:  Call to a member function dump() on a non-object in /home/team11/view/User/login.htm on line 17
+[28-Nov-2017 12:10:24 UTC] Fatal error: Call to a member function dump() on a non-object
+[28-Nov-2017 12:10:24 UTC] [view/User/login.htm:17] 
+[28-Nov-2017 12:11:46 UTC] PHP Parse error:  syntax error, unexpected 'g' (T_STRING), expecting ',' or ';' in /home/team11/view/User/login.htm on line 12
+[28-Nov-2017 12:11:46 UTC] Fatal error: syntax error, unexpected 'g' (T_STRING), expecting ',' or ';'
+[28-Nov-2017 12:11:46 UTC] [view/User/login.htm:12] 
+[28-Nov-2017 12:31:41 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 41
+[28-Nov-2017 12:31:41 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:31:41 UTC] [helpers/authhelper.php:41] 
+[28-Nov-2017 12:31:41 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:31:44 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 41
+[28-Nov-2017 12:31:44 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:31:44 UTC] [helpers/authhelper.php:41] 
+[28-Nov-2017 12:31:44 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:31:45 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 41
+[28-Nov-2017 12:31:45 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:31:45 UTC] [helpers/authhelper.php:41] 
+[28-Nov-2017 12:31:45 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:31:53 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 41
+[28-Nov-2017 12:31:53 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:31:53 UTC] [helpers/authhelper.php:41] 
+[28-Nov-2017 12:31:53 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:32:20 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 38
+[28-Nov-2017 12:32:20 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:32:20 UTC] [helpers/authhelper.php:38] 
+[28-Nov-2017 12:32:20 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:32:36 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 38
+[28-Nov-2017 12:32:36 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:32:36 UTC] [helpers/authhelper.php:38] 
+[28-Nov-2017 12:32:36 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:33:58 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 38
+[28-Nov-2017 12:33:58 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:33:58 UTC] [helpers/authhelper.php:38] 
+[28-Nov-2017 12:33:58 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:34:04 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 38
+[28-Nov-2017 12:34:04 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:34:04 UTC] [helpers/authhelper.php:38] 
+[28-Nov-2017 12:34:04 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:38:50 UTC] HTTP 403 (GET /selftest)
+[28-Nov-2017 12:38:50 UTC] [controllers/selftest.php:72] Base->error()
+[28-Nov-2017 12:38:50 UTC] [lib/base.php:1791] call_user_func_array()
+[28-Nov-2017 12:38:50 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:38:50 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:39:22 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 36
+[28-Nov-2017 12:39:22 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:39:22 UTC] [helpers/authhelper.php:36] 
+[28-Nov-2017 12:39:22 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:39:24 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 36
+[28-Nov-2017 12:39:24 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:39:24 UTC] [helpers/authhelper.php:36] 
+[28-Nov-2017 12:39:24 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:39:40 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 37
+[28-Nov-2017 12:39:40 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:39:40 UTC] [helpers/authhelper.php:37] 
+[28-Nov-2017 12:39:40 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:39:42 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 37
+[28-Nov-2017 12:39:42 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:39:42 UTC] [helpers/authhelper.php:37] 
+[28-Nov-2017 12:39:42 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:39:44 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 37
+[28-Nov-2017 12:39:44 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:39:44 UTC] [helpers/authhelper.php:37] 
+[28-Nov-2017 12:39:44 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:42:38 UTC] Object of class Request could not be converted to string
+[28-Nov-2017 12:42:38 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 12:42:38 UTC] [helpers/authhelper.php:33] Base->{closure}()
+[28-Nov-2017 12:42:38 UTC] [controllers/user.php:73] AuthHelper->checkLogin()
+[28-Nov-2017 12:42:38 UTC] [lib/base.php:1791] call_user_func_array()
+[28-Nov-2017 12:42:38 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:42:38 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:42:52 UTC] Object of class Request could not be converted to string
+[28-Nov-2017 12:42:52 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 12:42:52 UTC] [helpers/authhelper.php:33] Base->{closure}()
+[28-Nov-2017 12:42:52 UTC] [controllers/user.php:73] AuthHelper->checkLogin()
+[28-Nov-2017 12:42:52 UTC] [lib/base.php:1791] call_user_func_array()
+[28-Nov-2017 12:42:52 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 12:42:52 UTC] [index.php:34] Base->run()
+[28-Nov-2017 12:43:59 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/team11/helpers/authhelper.php on line 40
+[28-Nov-2017 12:43:59 UTC] Fatal error: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+[28-Nov-2017 12:43:59 UTC] [helpers/authhelper.php:40] 
+[28-Nov-2017 12:43:59 UTC] PHP Fatal error:  Class 'AuthHelper' not found in /home/team11/controllers/controller.php on line 19
+[28-Nov-2017 12:44:38 UTC] PHP Fatal error:  Call to undefined function var_demp() in /home/team11/helpers/authhelper.php on line 33
+[28-Nov-2017 12:44:38 UTC] Fatal error: Call to undefined function var_demp()
+[28-Nov-2017 12:44:38 UTC] [helpers/authhelper.php:33] 
+[28-Nov-2017 12:57:35 UTC] PHP Fatal error:  Call to a member function reroute() on a non-object in /home/team11/helpers/authhelper.php on line 59
+[28-Nov-2017 12:57:35 UTC] Fatal error: Call to a member function reroute() on a non-object
+[28-Nov-2017 12:57:35 UTC] [helpers/authhelper.php:59] 
+[28-Nov-2017 12:59:59 UTC] PHP Fatal error:  Call to a member function reroute() on a non-object in /home/team11/helpers/authhelper.php on line 59
+[28-Nov-2017 12:59:59 UTC] Fatal error: Call to a member function reroute() on a non-object
+[28-Nov-2017 12:59:59 UTC] [helpers/authhelper.php:59] 
+[28-Nov-2017 13:37:10 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/team11/controllers/user.php on line 88
+[28-Nov-2017 13:37:10 UTC] Fatal error: syntax error, unexpected 'public' (T_PUBLIC)
+[28-Nov-2017 13:37:10 UTC] [controllers/user.php:88] 
+[28-Nov-2017 13:37:11 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/team11/controllers/user.php on line 88
+[28-Nov-2017 13:37:11 UTC] Fatal error: syntax error, unexpected 'public' (T_PUBLIC)
+[28-Nov-2017 13:37:11 UTC] [controllers/user.php:88] 
+[28-Nov-2017 13:41:50 UTC] curl_setopt_array(): supplied argument is not a valid cURL handle resource
+[28-Nov-2017 13:41:50 UTC] [lib/base.php:2178] Base->error()
+[28-Nov-2017 13:41:50 UTC] [controllers/user.php:48] curl_setopt_array()
+[28-Nov-2017 13:41:50 UTC] [utility/mock.php:110] call_user_func()
+[28-Nov-2017 13:41:50 UTC] [controllers/selftest.php:122] Mock->run()
+[28-Nov-2017 13:41:50 UTC] [controllers/selftest.php:86] Selftest->before_tests()
+[28-Nov-2017 13:41:50 UTC] [lib/base.php:1791] call_user_func_array()
+[28-Nov-2017 13:41:50 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 13:41:50 UTC] [index.php:34] Base->run()
+[28-Nov-2017 14:05:46 UTC] HTTP 403 (GET /selftest)
+[28-Nov-2017 14:05:46 UTC] [controllers/selftest.php:72] Base->error()
+[28-Nov-2017 14:05:46 UTC] [lib/base.php:1791] call_user_func_array()
+[28-Nov-2017 14:05:46 UTC] [lib/base.php:1612] Base->call()
+[28-Nov-2017 14:05:46 UTC] [index.php:34] Base->run()

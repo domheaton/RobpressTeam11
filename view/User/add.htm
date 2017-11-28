@@ -13,9 +13,19 @@
 	echo $form->add('password',array('type' => 'password','value' => ''));
 	echo $form->add('password2',array('type' => 'password','value' => '', 'label' => 'Confirm Password'));
 	echo '<hr/>';
+?>
+	<!-- BRUTE FORCE VULNERATBILITY
+	Solved using reCAPTCHA method by Google
+	See also function checkLogin() in AuthHelper.php -->
+	<div class="g-recaptcha" data-sitekey="6LfewToUAAAAAEFRCRgM8SLLFdMnNDu851huUF1S"></div>
+
+<?
 	echo $form->add('Register',array('type' => 'submit'));
 	echo $form->end();
 ?>
+
+<!-- BRUTE FORCE VULNERATBILITY -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <hr/>
 <p>Already have an account? Just <a href="<?=$site['base']?>/user/login">Login</a>

@@ -32,29 +32,89 @@ class User extends Controller {
 			} else if($email == "") {
 				StatusMessage::add('Email cannot be blank', 'danger');
 		  } else {
-				$user = $this->Model->Users;
-				$user->copyfrom('POST');
-				$user->created = mydate();
-				$user->bio = '';
-				$user->level = 1;
 
-				//XSS VULERNERABILITY
-				//Remove tags (<></>) from username, displayname and password
-				$user->username = $f3->clean($username);
-				$user->displayname = $f3->clean($displayname);
-				$user->setPassword($f3->clean($password));
-				// $user->setPassword($password);
+				//Check for debug mode
+				$settings = $this->Model->Settings;
+				$debug = $settings->getSetting('debug');
+				
+				if ($debug == true) {
+					$user = $this->Model->Users;
+					$user->copyfrom('POST');
+					$user->created = mydate();
+					$user->bio = '';
+					$user->level = 1;
 
-				if(empty($displayname)) {
-					$user->displayname = $user->username;
+					//XSS VULERNERABILITY
+					//Remove tags (<></>) from username, displayname and password
+					$user->username = $f3->clean($username);
+					$user->displayname = $f3->clean($displayname);
+					$user->setPassword($f3->clean($password));
+					// $user->setPassword($password);
+
+					if(empty($displayname)) {
+						$user->displayname = $user->username;
+					}
+
+					//Set the users password
+					$user->setPassword($user->password);
+
+					$user->save();
+					StatusMessage::add('Registration complete','success');
+					return $f3->reroute('/user/login');
 				}
+				else {
 
-				//Set the users password
-				$user->setPassword($user->password);
+					// BRUTE FORCE VULNERATBILITY
+					// Verify Google reCAPTCHA Here
+					$curl = curl_init();
 
-				$user->save();
-				StatusMessage::add('Registration complete','success');
-				return $f3->reroute('/user/login');
+					curl_setopt_array($curl, [
+						CURLOPT_RETURNTRANSFER => 1,
+						CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
+						CURLOPT_POST => 1,
+						CURLOPT_POSTFIELDS => [
+							'secret' => '6LfewToUAAAAAB7fzVxy81bhIeDB5cWSsL2ZT6ba',
+							'response' => $_POST['g-recaptcha-response'],
+						],
+					]);
+
+					$response = json_decode(curl_exec($curl));
+
+					// For debugging
+					// var_dump($response);
+					// die();
+
+					if(!$response->success) {
+						// if unsuccessful display error
+						StatusMessage::add('Please complete the reCAPTCHA', 'danger');
+						return $f3->reroute('/user/add');
+					} else {
+						// continue as normal if recaptcha attempt successful
+						$user = $this->Model->Users;
+						$user->copyfrom('POST');
+						$user->created = mydate();
+						$user->bio = '';
+						$user->level = 1;
+
+						//XSS VULERNERABILITY
+						//Remove tags (<></>) from username, displayname and password
+						$user->username = $f3->clean($username);
+						$user->displayname = $f3->clean($displayname);
+						$user->setPassword($f3->clean($password));
+						// $user->setPassword($password);
+
+						if(empty($displayname)) {
+							$user->displayname = $user->username;
+						}
+
+						//Set the users password
+						$user->setPassword($user->password);
+
+						$user->save();
+						StatusMessage::add('Registration complete','success');
+						return $f3->reroute('/user/login');
+					}
+				}
 			}
 		}
 	}

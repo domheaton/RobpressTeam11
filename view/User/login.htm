@@ -4,13 +4,24 @@
 <p>Please type your RobPress username and password to log in</p>
 
 <?
-	$form = new Form(); 
+	$form = new Form();
 	echo $form->start();
 	echo $form->add('username');
 	echo $form->add('password',array('type' => 'password','value' => ''));
+	echo '<hr/>';
+?>
+	<!-- BRUTE FORCE VULNERATBILITY
+	Solved using reCAPTCHA method by Google
+	See also function checkLogin() in AuthHelper.php -->
+	<div class="g-recaptcha" data-sitekey="6LfewToUAAAAAEFRCRgM8SLLFdMnNDu851huUF1S"></div>
+
+<?
 	echo $form->add('Login',array('type' => 'submit'));
 	echo $form->end();
 ?>
+
+	<!-- BRUTE FORCE VULNERATBILITY -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <hr/>
 <p>Don't have an account yet? Why not <a href="<?=$site['base']?>/user/add">Register</a>
