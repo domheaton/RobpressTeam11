@@ -110,12 +110,12 @@ class Blog extends Controller {
 			$f3->set('search',$search);
 
 			//Get search results
-			// XSS VULNERABILITY
+			// XSS & SQL VULNERABILITY
 			// $search = str_replace("*","%",$search); //Allow * as wildcard
-			$tempsearch = str_replace("*","%", $search);
-			$search = $f3->clean($tempsearch);
+			$tempsearch = str_replace("*","%",$search);
+			$tempsearch = str_replace("\"", "%",$search); //SQL
+			$search = $f3->clean($tempsearch); //XSS
 
-			// SQL VULNERABILITY
 			// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
 			$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE \"%$search%\"");
 

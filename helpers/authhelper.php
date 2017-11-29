@@ -72,7 +72,16 @@
 		public function login($username,$password) {
 			$f3=Base::instance();
 			$db = $this->controller->db;
-			$results = $db->query("SELECT * FROM `users` WHERE `username`='$username' AND `password`='$password'");
+
+			//SQL VULNERABILITY
+			$tempUsername = str_replace("*", "%",$username);
+			$tempUsername = str_replace("\"", "%",$username);
+			$tempPassword = str_replace("*", "%",$password);
+			$tempPassword = str_replace("\"", "%",$password);
+
+			$results = $db->query("SELECT * FROM `users` WHERE `username`= \"$tempUsername\" AND `password`= \"$tempPassword\"");
+			// $results = $db->query("SELECT * FROM `users` WHERE `username`='$username' AND `password`='$password'");
+
 			if (!empty($results)) {
 				$user = $results[0];
 				$this->setupSession($user);
