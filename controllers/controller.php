@@ -37,6 +37,9 @@ class Controller {
 		$this->Settings = $settings;
 		$f3->set('site',$settings);
 
+		//Enable backwards compatability
+		if($f3->get('PARAMS.*')) { $f3->set('PARAMS.3',$f3->get('PARAMS.*')); }
+
 		//Extract request data
 		extract($this->request->data);
 

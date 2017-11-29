@@ -15,9 +15,9 @@ class Comment extends AdminController {
 		$moderated = $this->Model->map($mod ,'user_id','Users');
 		$moderated = $this->Model->map($mod ,'blog_id','Posts',true,$moderated);
 
+		// XSS VULNERABILITY
 		// $f3->set('unmoderated',$unmoderated);
 		// $f3->set('moderated',$moderated);
-		// XSS VULNERABILITY
 		$f3->set('unmoderated',$f3->clean($unmoderated));
 		$f3->set('moderated',$f3->clean($moderated));
 	}

@@ -6,8 +6,9 @@ class User extends AdminController {
 
 	public function index($f3) {
 		$users = $this->Model->Users->fetchAll();
-		// $f3->set('users',$users);
+
 		// XSS VULNERABILITY
+		// $f3->set('users',$users);
 		$f3->set('users',$f3->clean($users));
 	}
 

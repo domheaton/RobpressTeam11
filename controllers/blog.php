@@ -33,8 +33,11 @@ class Blog extends Controller {
 		$comments = $this->Model->Comments->fetchAll(array('blog_id' => $id));
 		$allcomments = $this->Model->map($comments,'user_id','Users');
 
-		$f3->set('comments',$allcomments);
-		$f3->set('blog',$blog);
+		// XSS VULNERABILITY
+		// $f3->set('comments',$allcomments));
+		$f3->set('comments',$f3->clean($allcomments));
+		// $f3->set('blog',$blog);
+		$f3->set('blog',$f3->clean($blog));
 	}
 
 	public function reset($f3) {
@@ -109,13 +112,12 @@ class Blog extends Controller {
 			//Get search results
 			// XSS VULNERABILITY
 			// $search = str_replace("*","%",$search); //Allow * as wildcard
-			$tempsearch = str_replace("*","%",$search);
+			$tempsearch = str_replace("*","%", $search);
 			$search = $f3->clean($tempsearch);
 
 			// SQL VULNERABILITY
-			$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
-			// Attempt to fix SQL-Injection //
-			// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE :search OR `content` LIKE :search2", array('search'=>$search, 'search2'=>$search));
+			// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
+			$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE \"%$search%\"");
 
 			$ids = Hash::extract($ids,'{n}.id');
 			if(empty($ids)) {

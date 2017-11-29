@@ -30,11 +30,11 @@
 			if($this->request->is('post')) {
 				$post = $this->Model->Posts;
 				extract($this->request->data);
+
+				// XSS VULNERABILITY
 				// $post->title = $title;
 				// $post->content = $content;
 				// $post->summary = $summary;
-
-				// XSS VULNERABILITY
 				$post->title = $f3->clean($title);
 				$post->content = $f3->clean($content);
 				$post->summary = $f3->clean($summary);

@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2015 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -29,7 +29,7 @@ class OpenID extends \Magic {
 		//! OpenID provider endpoint URL
 		$url,
 		//! HTTP request parameters
-		$args=[];
+		$args=array();
 
 	/**
 	*	Determine OpenID provider
@@ -38,11 +38,11 @@ class OpenID extends \Magic {
 	**/
 	protected function discover($proxy) {
 		// Normalize
-		if (!preg_match('/https?:\/\//i',$this->args['endpoint']))
-			$this->args['endpoint']='http://'.$this->args['endpoint'];
-		$url=parse_url($this->args['endpoint']);
+		if (!preg_match('/https?:\/\//i',$this->args['identity']))
+			$this->args['identity']='http://'.$this->args['identity'];
+		$url=parse_url($this->args['identity']);
 		// Remove fragment; reconnect parts
-		$this->args['endpoint']=$url['scheme'].'://'.
+		$this->args['identity']=$url['scheme'].'://'.
 			(isset($url['user'])?
 				($url['user'].
 				(isset($url['pass'])?(':'.$url['pass']):'').'@'):'').
@@ -50,7 +50,7 @@ class OpenID extends \Magic {
 			(isset($url['query'])?('?'.$url['query']):'');
 		// HTML-based discovery of OpenID provider
 		$req=\Web::instance()->
-			request($this->args['endpoint'],['proxy'=>$proxy]);
+			request($this->args['identity'],array('proxy'=>$proxy));
 		if (!$req)
 			return FALSE;
 		$type=array_values(preg_grep('/Content-Type:/',$req['headers']));
@@ -63,9 +63,8 @@ class OpenID extends \Magic {
 			$svc=$xrds['XRD']['Service'];
 			if (isset($svc[0]))
 				$svc=$svc[0];
-			$svc_type=is_array($svc['Type'])?$svc['Type']:array($svc['Type']);
 			if (preg_grep('/http:\/\/specs\.openid\.net\/auth\/2.0\/'.
-					'(?:server|signon)/',$svc_type)) {
+					'(?:server|signon)/',$svc['Type'])) {
 				$this->args['provider']=$svc['URI'];
 				if (isset($svc['LocalID']))
 					$this->args['localidentity']=$svc['LocalID'];
@@ -90,7 +89,7 @@ class OpenID extends \Magic {
 						preg_match_all('/\b(rel|href)\h*=\h*'.
 							'(?:"(.+?)"|\'(.+?)\')/s',$parts[1],$attr,
 							PREG_SET_ORDER)) {
-						$node=[];
+						$node=array();
 						foreach ($attr as $kv)
 							$node[$kv[1]]=isset($kv[2])?$kv[2]:$kv[3];
 						if (isset($node['rel']) &&
@@ -141,11 +140,11 @@ class OpenID extends \Magic {
 	*	@param $attr array
 	*	@param $reqd string|array
 	**/
-	function auth($proxy=NULL,$attr=[],array $reqd=NULL) {
+	function auth($proxy=NULL,$attr=array(),array $reqd=NULL) {
 		$fw=\Base::instance();
-		$root=$fw->SCHEME.'://'.$fw->HOST;
+		$root=$fw->get('SCHEME').'://'.$fw->get('HOST');
 		if (empty($this->args['trust_root']))
-			$this->args['trust_root']=$root.$fw->BASE.'/';
+			$this->args['trust_root']=$root.$fw->get('BASE').'/';
 		if (empty($this->args['return_to']))
 			$this->args['return_to']=$root.$_SERVER['REQUEST_URI'];
 		$this->args['mode']='checkid_setup';
@@ -158,7 +157,7 @@ class OpenID extends \Magic {
 				$this->args['ax.required']=is_string($reqd)?
 					$reqd:implode(',',$reqd);
 			}
-			$var=[];
+			$var=array();
 			foreach ($this->args as $key=>$val)
 				$var['openid.'.$key]=$val;
 			$fw->reroute($this->url.'?'.http_build_query($var));
@@ -180,16 +179,16 @@ class OpenID extends \Magic {
 			$this->args['mode']!='error' &&
 			$this->url=$this->discover($proxy)) {
 			$this->args['mode']='check_authentication';
-			$var=[];
+			$var=array();
 			foreach ($this->args as $key=>$val)
 				$var['openid.'.$key]=$val;
 			$req=\Web::instance()->request(
 				$this->url,
-				[
+				array(
 					'method'=>'POST',
 					'content'=>http_build_query($var),
 					'proxy'=>$proxy
-				]
+				)
 			);
 			return (bool)preg_match('/is_valid:true/i',$req['body']);
 		}
@@ -246,3 +245,4 @@ class OpenID extends \Magic {
 	}
 
 }
+

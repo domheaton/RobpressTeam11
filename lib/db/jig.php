@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2015 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -51,7 +51,7 @@ class Jig {
 	function &read($file) {
 		if (!$this->dir || !is_file($dst=$this->dir.$file)) {
 			if (!isset($this->data[$file]))
-				$this->data[$file]=[];
+				$this->data[$file]=array();
 			return $this->data[$file];
 		}
 		$fw=\Base::instance();
@@ -80,7 +80,7 @@ class Jig {
 		$fw=\Base::instance();
 		switch ($this->format) {
 			case self::FORMAT_JSON:
-				$out=json_encode($data,JSON_PRETTY_PRINT);
+				$out=json_encode($data,@constant('JSON_PRETTY_PRINT'));
 				break;
 			case self::FORMAT_Serialized:
 				$out=$fw->serialize($data);
@@ -106,14 +106,11 @@ class Jig {
 	}
 
 	/**
-	*	Return profiler results (or disable logging)
-	*	@param $flag bool
+	*	Return profiler results
 	*	@return string
 	**/
-	function log($flag=TRUE) {
-		if ($flag)
-			return $this->log;
-		$this->log=FALSE;
+	function log() {
+		return $this->log;
 	}
 
 	/**
@@ -132,14 +129,10 @@ class Jig {
 	**/
 	function drop() {
 		if (!$this->dir)
-			$this->data=[];
+			$this->data=array();
 		elseif ($glob=@glob($this->dir.'/*',GLOB_NOSORT))
 			foreach ($glob as $file)
 				@unlink($file);
-	}
-
-	//! Prohibit cloning
-	private function __clone() {
 	}
 
 	/**

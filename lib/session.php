@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2015 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -33,9 +33,7 @@ class Session {
 		//! IP,
 		$_ip,
 		//! Suspect callback
-		$onsuspect,
-		//! Cache instance
-		$_cache;
+		$onsuspect;
 
 	/**
 	*	Open session
@@ -58,21 +56,20 @@ class Session {
 
 	/**
 	*	Return session data in serialized format
-	*	@return string
+	*	@return string|FALSE
 	*	@param $id string
 	**/
 	function read($id) {
 		$this->sid=$id;
-		if (!$data=$this->_cache->get($id.'.@'))
-			return '';
+		if (!$data=Cache::instance()->get($id.'.@'))
+			return FALSE;
 		if ($data['ip']!=$this->_ip || $data['agent']!=$this->_agent) {
 			$fw=Base::instance();
-			if (!isset($this->onsuspect) ||
-				$fw->call($this->onsuspect,[$this,$id])===FALSE) {
+			if (!isset($this->onsuspect) || FALSE===$fw->call($this->onsuspect,array($this,$id))) {
 				//NB: `session_destroy` can't be called at that stage (`session_start` not completed)
 				$this->destroy($id);
 				$this->close();
-				unset($fw->{'COOKIE.'.session_name()});
+				$fw->clear('COOKIE.'.session_name());
 				$fw->error(403);
 			}
 		}
@@ -87,14 +84,14 @@ class Session {
 	**/
 	function write($id,$data) {
 		$fw=Base::instance();
-		$jar=$fw->JAR;
-		$this->_cache->set($id.'.@',
-			[
+		$jar=$fw->get('JAR');
+		Cache::instance()->set($id.'.@',
+			array(
 				'data'=>$data,
 				'ip'=>$this->_ip,
 				'agent'=>$this->_agent,
 				'stamp'=>time()
-			],
+			),
 			$jar['expire']?($jar['expire']-time()):0
 		);
 		return TRUE;
@@ -106,7 +103,7 @@ class Session {
 	*	@param $id string
 	**/
 	function destroy($id) {
-		$this->_cache->clear($id.'.@');
+		Cache::instance()->clear($id.'.@');
 		return TRUE;
 	}
 
@@ -116,7 +113,7 @@ class Session {
 	*	@param $max int
 	**/
 	function cleanup($max) {
-		$this->_cache->reset('.@',$max);
+		Cache::instance()->reset('.@',$max);
 		return TRUE;
 	}
 
@@ -151,7 +148,7 @@ class Session {
 	function stamp() {
 		if (!$this->sid)
 			session_start();
-		return $this->_cache->exists($this->sid.'.@',$data)?
+		return Cache::instance()->exists($this->sid.'.@',$data)?
 			$data['stamp']:FALSE;
 	}
 
@@ -168,25 +165,25 @@ class Session {
 	*	@param $onsuspect callback
 	*	@param $key string
 	**/
-	function __construct($onsuspect=NULL,$key=NULL,$cache=null) {
+	function __construct($onsuspect=NULL,$key=NULL) {
 		$this->onsuspect=$onsuspect;
-		$this->_cache=$cache?:Cache::instance();
 		session_set_save_handler(
-			[$this,'open'],
-			[$this,'close'],
-			[$this,'read'],
-			[$this,'write'],
-			[$this,'destroy'],
-			[$this,'cleanup']
+			array($this,'open'),
+			array($this,'close'),
+			array($this,'read'),
+			array($this,'write'),
+			array($this,'destroy'),
+			array($this,'cleanup')
 		);
 		register_shutdown_function('session_commit');
 		$fw=\Base::instance();
-		$headers=$fw->HEADERS;
-		$this->_csrf=$fw->SEED.'.'.$fw->hash(mt_rand());
+		$headers=$fw->get('HEADERS');
+		$this->_csrf=$fw->hash($fw->get('ROOT').$fw->get('BASE')).'.'.
+			$fw->hash(mt_rand());
 		if ($key)
-			$fw->$key=$this->_csrf;
+			$fw->set($key,$this->_csrf);
 		$this->_agent=isset($headers['User-Agent'])?$headers['User-Agent']:'';
-		$this->_ip=$fw->IP;
+		$this->_ip=$fw->get('IP');
 	}
 
 }

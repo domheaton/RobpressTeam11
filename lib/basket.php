@@ -2,7 +2,7 @@
 
 /*
 
-	Copyright (c) 2009-2017 F3::Factory/Bong Cosca, All rights reserved.
+	Copyright (c) 2009-2015 F3::Factory/Bong Cosca, All rights reserved.
 
 	This file is part of the Fat-Free Framework (http://fatfreeframework.com).
 
@@ -34,7 +34,7 @@ class Basket extends Magic {
 		//! Current item identifier
 		$id,
 		//! Current item contents
-		$item=[];
+		$item=array();
 
 	/**
 	*	Return TRUE if field is defined
@@ -86,7 +86,7 @@ class Basket extends Magic {
 	*	@param $val mixed
 	**/
 	function find($key=NULL,$val=NULL) {
-		$out=[];
+		$out=array();
 		if (isset($_SESSION[$this->key])) {
 			foreach ($_SESSION[$this->key] as $id=>$item)
 				if (!isset($key) ||
@@ -122,7 +122,7 @@ class Basket extends Magic {
 			return $this->item=$found[0]->item;
 		}
 		$this->reset();
-		return [];
+		return array();
 	}
 
 	/**
@@ -175,7 +175,7 @@ class Basket extends Magic {
 	**/
 	function reset() {
 		$this->id=NULL;
-		$this->item=[];
+		$this->item=array();
 	}
 
 	/**
@@ -193,7 +193,7 @@ class Basket extends Magic {
 	**/
 	function copyfrom($var) {
 		if (is_string($var))
-			$var=\Base::instance()->$var;
+			$var=\Base::instance()->get($var);
 		foreach ($var as $key=>$val)
 			$this->set($key,$val);
 	}
@@ -219,7 +219,7 @@ class Basket extends Magic {
 			unset($_SESSION[$this->key]);
 			return $out;
 		}
-		return [];
+		return array();
 	}
 
 	/**
@@ -229,8 +229,7 @@ class Basket extends Magic {
 	**/
 	function __construct($key='basket') {
 		$this->key=$key;
-		if (session_status()!=PHP_SESSION_ACTIVE)
-			session_start();
+		@session_start();
 		Base::instance()->sync('SESSION');
 		$this->reset();
 	}

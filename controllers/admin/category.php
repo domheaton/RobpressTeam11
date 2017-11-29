@@ -17,8 +17,9 @@
 		public function add($f3) {
 			if($this->request->is('post')) {
 				$category = $this->Model->Categories;
-				// $category->title = $this->request->data['title'];
+
 				//XSS VULNERABILITY
+				// $category->title = $this->request->data['title'];
 				$category->title = $f3->clean($this->request->data['title']);
 				$category->save();
 
