@@ -3,14 +3,24 @@ class User extends Controller {
 
 	public function view($f3) {
 		$userid = $f3->get('PARAMS.3');
-		$u = $this->Model->Users->fetch($userid);
 
-		$articles = $this->Model->Posts->fetchAll(array('user_id' => $userid));
-		$comments = $this->Model->Comments->fetchAll(array('user_id' => $userid));
+		// SQL VULNERABILITY
+		// Prevents search of database for a user with a non-numeric parameter
+		// Redirects to 'page not found' error if user profile not found
+		if(!is_numeric($userid)) {
+			return $f3->reroute('/404.htm');
+		}
+		else {
+			$u = $this->Model->Users->fetch($userid);
 
-		$f3->set('u',$u);
-		$f3->set('articles',$articles);
-		$f3->set('comments',$comments);
+			$articles = $this->Model->Posts->fetchAll(array('user_id' => $userid));
+			$comments = $this->Model->Comments->fetchAll(array('user_id' => $userid));
+
+			$f3->set('u',$u);
+			$f3->set('articles',$articles);
+			$f3->set('comments',$comments);
+		}
+
 	}
 
 	public function add($f3) {
@@ -36,7 +46,7 @@ class User extends Controller {
 				//Check for debug mode
 				$settings = $this->Model->Settings;
 				$debug = $settings->getSetting('debug');
-				
+
 				if ($debug == true) {
 					$user = $this->Model->Users;
 					$user->copyfrom('POST');

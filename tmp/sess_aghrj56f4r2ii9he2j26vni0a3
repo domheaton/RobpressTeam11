@@ -1,2 +1,0 @@
-user|a:9:{s:2:"id";s:3:"179";s:8:"username";s:3:"123";s:11:"displayname";s:26:"<marquee>testXSS</marquee>";s:5:"email";s:3:"123";s:8:"password";s:3:"123";s:5:"level";s:1:"1";s:7:"created";s:19:"2017-11-27 12:36:19";s:3:"bio";s:16:"<p>testXSS</p>
-";s:6:"avatar";s:0:"";}

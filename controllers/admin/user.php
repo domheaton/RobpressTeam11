@@ -14,16 +14,24 @@ class User extends AdminController {
 
 	public function edit($f3) {
 		$id = $f3->get('PARAMS.3');
-		$u = $this->Model->Users->fetch($id);
-		if($this->request->is('post')) {
-			$u->copyfrom('POST');
-			$u->setPassword($this->request->data['password']);
-			$u->save();
-			\StatusMessage::add('User updated succesfully','success');
-			return $f3->reroute('/admin/user');
+
+		// SQL VULNERABILITY
+		// Prevents search of database for a user with a non-numeric parameter
+		// Redirects to 'page not found' error if user profile not found
+		if(!is_numeric($id)) {
+			return $f3->reroute('/404.htm');
+		} else {
+			$u = $this->Model->Users->fetch($id);
+			if($this->request->is('post')) {
+				$u->copyfrom('POST');
+				$u->setPassword($this->request->data['password']);
+				$u->save();
+				\StatusMessage::add('User updated succesfully','success');
+				return $f3->reroute('/admin/user');
+			}
+			$_POST = $u->cast();
+			$f3->set('u',$u);
 		}
-		$_POST = $u->cast();
-		$f3->set('u',$u);
 	}
 
 	public function delete($f3) {
