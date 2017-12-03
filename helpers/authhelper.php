@@ -109,9 +109,14 @@
 
 			//Setup new session
 			session_id(md5($user['id']));
+			//print out using // var_dump(session_id());
 
 			//Setup cookie for storing user details and for relogging in
-			setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');
+			// setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');
+
+			// CSRF CHECKS
+			//Set the cookie to match session_id for CSRF checks
+			setcookie('RobPress_User',base64_encode(serialize($user)),session_id(),'/');
 
 			//And begin!
 			new Session();

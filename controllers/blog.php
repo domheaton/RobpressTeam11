@@ -40,22 +40,40 @@ class Blog extends Controller {
 		$f3->set('blog',$f3->clean($blog));
 	}
 
+//THIS SHOULD NOT BE AVAILABLE TO ALL USERS -- ADMIN ONLY
 	public function reset($f3) {
-		$allposts = $this->Model->Posts->fetchAll();
-		$allcategories = $this->Model->Categories->fetchAll();
-		$allcomments = $this->Model->Comments->fetchAll();
-		$allmaps = $this->Model->Post_Categories->fetchAll();
-		foreach($allposts as $post) $post->erase();
-		foreach($allcategories as $cat) $cat->erase();
-		foreach($allcomments as $com) $com->erase();
-		foreach($allmaps as $map) $map->erase();
-		StatusMessage::add('Blog has been reset');
-		return $f3->reroute('/');
+		//Prevent Non-Admin users from accessing this function
+		if ($this->Auth->user('level') < 2) {
+			StatusMessage::add('Access Denied - No Admin Privileges Found');
+			return $f3->reroute('/');
+		}
+		else {
+			$allposts = $this->Model->Posts->fetchAll();
+			$allcategories = $this->Model->Categories->fetchAll();
+			$allcomments = $this->Model->Comments->fetchAll();
+			$allmaps = $this->Model->Post_Categories->fetchAll();
+			foreach($allposts as $post) $post->erase();
+			foreach($allcategories as $cat) $cat->erase();
+			foreach($allcomments as $com) $com->erase();
+			foreach($allmaps as $map) $map->erase();
+			StatusMessage::add('Blog has been reset');
+			return $f3->reroute('/');
+		}
 	}
 
 	public function comment($f3) {
+		// REDIRECT ISSUE
+		// $id = $f3->get('PARAMS.3');
+		// $post = $this->Model->Posts->fetch($id);
 		$id = $f3->get('PARAMS.3');
+		if(empty($id)) {
+			return $f3->reroute('/');
+		}
 		$post = $this->Model->Posts->fetch($id);
+		if(empty($post)) {
+			return $f3->route('/');
+		}
+
 		if($this->request->is('post')) {
 			$comment = $this->Model->Comments;
 			$comment->copyfrom('POST');
@@ -88,20 +106,28 @@ class Blog extends Controller {
 
 	public function moderate($f3) {
 		list($id,$option) = explode("/",$f3->get('PARAMS.3'));
-		$comments = $this->Model->Comments;
-		$comment = $comments->fetch($id);
 
-		$post_id = $comment->blog_id;
-		//Approve
-		if ($option == 1) {
-			$comment->moderated = 1;
-			$comment->save();
-		} else {
-		//Deny
-			$comment->erase();
+		//Prevent Non-Admin users from accessing this function
+		if ($this->Auth->user('level') < 2) {
+			StatusMessage::add('Access Denied - No Admin Privileges Found');
+			$f3->reroute('/blog/view/' . $comment->blog_id);
 		}
-		StatusMessage::add('The comment has been moderated');
-		$f3->reroute('/blog/view/' . $comment->blog_id);
+		else {
+			$comments = $this->Model->Comments;
+			$comment = $comments->fetch($id);
+
+			$post_id = $comment->blog_id;
+			//Approve
+			if ($option == 1) {
+				$comment->moderated = 1;
+				$comment->save();
+			} else {
+			//Deny
+				$comment->erase();
+			}
+			StatusMessage::add('The comment has been moderated');
+			$f3->reroute('/blog/view/' . $comment->blog_id);
+		}
 	}
 
 	public function search($f3) {
@@ -116,22 +142,30 @@ class Blog extends Controller {
 			$tempsearch = str_replace("\"", "%",$search); //SQL
 			$search = $f3->clean($tempsearch); //XSS
 
-			// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
-			$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE \"%$search%\"");
-
-			$ids = Hash::extract($ids,'{n}.id');
-			if(empty($ids)) {
-				StatusMessage::add('No search results found for ' . $search);
-				return $f3->reroute('/blog/search');
+			// CSRF VULNERABILITY
+			// check hidden form value with session_id
+			$f3->set('csrf',$csrf);
+			if ($csrf != session_id()) {
+				$f3->reroute('/403');
 			}
+			else {
+				// $ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
+				$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE \"%$search%\"");
 
-			//Load associated data
-			$posts = $this->Model->Posts->fetchAll(array('id' => $ids));
-			$blogs = $this->Model->map($posts,'user_id','Users');
-			$blogs = $this->Model->map($posts,array('post_id','Post_Categories','category_id'),'Categories',false,$blogs);
+				$ids = Hash::extract($ids,'{n}.id');
+				if(empty($ids)) {
+					StatusMessage::add('No search results found for ' . $search);
+					return $f3->reroute('/blog/search');
+				}
 
-			$f3->set('blogs',$blogs);
-			$this->action = 'results';
+				//Load associated data
+				$posts = $this->Model->Posts->fetchAll(array('id' => $ids));
+				$blogs = $this->Model->map($posts,'user_id','Users');
+				$blogs = $this->Model->map($posts,array('post_id','Post_Categories','category_id'),'Categories',false,$blogs);
+
+				$f3->set('blogs',$blogs);
+				$this->action = 'results';
+			}
 		}
 	}
 }

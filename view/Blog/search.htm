@@ -8,6 +8,7 @@
 	echo $form->start();
 	echo $form->add('search');
 	echo $form->add('Search',array('type' => 'submit'));
+	echo $form->add('csrf',array('type' => 'hidden', 'value' => session_id()));
 	echo $form->end();
 ?>
 
