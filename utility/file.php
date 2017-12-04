@@ -59,6 +59,9 @@ class File {
 				}
 			}
 		}
+		else {
+			\StatusMessage::add('File Not Accepted','danger');
+		}
 		// //Local files get moved
 		// if($local) {
 		// 	if (copy($tmp_name,$destination)) {

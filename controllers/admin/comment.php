@@ -24,6 +24,12 @@ class Comment extends AdminController {
 
 	public function edit($f3) {
 		$id = $f3->get('PARAMS.3');
+
+		// SQL INJECTION & XSS VULNERABILITY
+		if(!is_numeric($id)) {
+			return $f3->reroute('/404.htm');
+		}
+
 		$comment = $this->Model->Comments->fetch($id);
 		if($this->request->is('post')) {
 			$comment->copyfrom('POST');

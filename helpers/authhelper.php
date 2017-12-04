@@ -108,15 +108,16 @@
 			session_destroy();
 
 			//Setup new session
-			session_id(md5($user['id']));
-			//print out using // var_dump(session_id());
+			//INSECURE SESSION ID
+			// Replace with session_id not entirely dependent on userID alone
+			// session_id(md5($user['id']));
+			session_id(md5(($user['id'])+time()+4000*23*32));
+			//print out using // var_dump(session_id()); die();
 
 			//Setup cookie for storing user details and for relogging in
 			// setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');
-
-			// CSRF CHECKS
-			//Set the cookie to match session_id for CSRF checks
-			setcookie('RobPress_User',base64_encode(serialize($user)),session_id(),'/');
+			// Shortened Cookie lifetime to 1 day rather than 30 days - more secure
+			setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24,'/');
 
 			//And begin!
 			new Session();

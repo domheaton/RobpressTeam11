@@ -82,6 +82,15 @@
 
 		public function edit($f3) {
 			$postid = $f3->get('PARAMS.3');
+
+			// SQL INJECTION & XSS VULNERABILITY
+			if(!is_numeric($postid)) {
+				return $f3->reroute('/404.htm');
+			}
+			if(empty($postid)) {
+				return $f3->reroute('/404.htm');
+			}
+
 			$post = $this->Model->Posts->fetchById($postid);
 			$blog = $this->Model->map($post,array('post_id','Post_Categories','category_id'),'Categories',false);
 			if ($this->request->is('post')) {

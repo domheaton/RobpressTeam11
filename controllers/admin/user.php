@@ -36,7 +36,20 @@ class User extends AdminController {
 
 	public function delete($f3) {
 		$id = $f3->get('PARAMS.3');
+
+		// SQL VULNERABILITY (also XSS)
+		// Prevents search of database for a user with a non-numeric parameter
+		// Redirects to 'page not found' error if user profile not found
+		if(!is_numeric($id)) {
+			return $f3->reroute('/404.htm');
+		}
+
 		$u = $this->Model->Users->fetch($id);
+
+		// INFORMATION EXPOSURE VULNERABILITY
+		if(empty($u)) {
+			return $f3->reroute('/404.htm');
+		}
 
 		if($id == $this->Auth->user('id')) {
 			\StatusMessage::add('You cannot remove yourself','danger');

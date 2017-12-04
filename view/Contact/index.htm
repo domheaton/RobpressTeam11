@@ -19,6 +19,8 @@
 	echo $form->add('to',array('type' => 'hidden', 'value' => $to));
 	echo $form->add('subject',array('type' => 'text'));
 	echo $form->add('message',array('type' => 'textarea'));
+	//CSRF Token for Verifying Transactions
+	echo $form->add('csrf',array('type' => 'hidden', 'value' => session_id()));
 	echo $form->add('Send',array('type' => 'submit'));
 
 	echo $form->end();
