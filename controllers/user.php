@@ -90,10 +90,6 @@ class User extends Controller {
 
 					$response = json_decode(curl_exec($curl));
 
-					// For debugging
-					// var_dump($response);
-					// die();
-
 					if(!$response->success) {
 						// if unsuccessful display error
 						StatusMessage::add('Please complete the reCAPTCHA', 'danger');
@@ -196,11 +192,17 @@ class User extends Controller {
 	}
 
 	public function promote($f3) {
-		$id = $this->Auth->user('id');
-		$u = $this->Model->Users->fetch($id);
-		$u->level = 2;
-		$u->save();
-		return $f3->reroute('/');
+		if ($this->Auth->user('level') < 2) {
+			StatusMessage::add('Access Denied','danger');
+			return $f3->reroute('/');
+		}
+		else {
+			$id = $this->Auth->user('id');
+			$u = $this->Model->Users->fetch($id);
+			$u->level = 2;
+			$u->save();
+			return $f3->reroute('/');
+		}
 	}
 
 }

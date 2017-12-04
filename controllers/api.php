@@ -1,7 +1,7 @@
 <?php
 
 class Api extends Controller {
-	
+
 	public function display($f3) {
 		extract($f3->get('PARAMS'));
 		extract($f3->get('GET'));
@@ -24,10 +24,10 @@ class Api extends Controller {
 		}
 
 		//File not found
-		if(empty($results)) { 
+		if(empty($results)) {
 			echo json_encode(array('error' => '404')); die();
 		}
-		
+
 		echo json_encode($results);
 		exit();
 	}

@@ -9,11 +9,10 @@ class Page extends Controller {
 
 		// XSS VULNERABILITY
 		// Prevents the creation of a page where  cross-site scripting can be used within
-		// Now the temporary page is just plain text rather than harmful
+		// Now the temporary page title is clean of tags -- body is already clear
 		// $f3->set('pagetitle',$pagetitle);
-		// $f3->set('page',$page);
 		$f3->set('pagetitle',$f3->clean($pagetitle));
-		$f3->set('page',$f3->clean($page));
+		$f3->set('page',$page);
 	}
 
 }

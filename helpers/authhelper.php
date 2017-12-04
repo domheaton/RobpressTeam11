@@ -31,14 +31,6 @@
 			// Verify Google reCAPTCHA Here
 			// Failure to complete recaptcha redirects back to login page
 
-			// For debugging
-			// var_dump($_POST);
-			// var_dump($username);
-			// var_dump($password);
-			// var_dump($request);
-			// var_dump($debug);
-			// die();
-
 			$curl = curl_init();
 
 			curl_setopt_array($curl, [
@@ -52,10 +44,6 @@
 			]);
 
 			$response = json_decode(curl_exec($curl));
-
-			// For debugging
-			// var_dump($response);
-			// die();
 
 			if(!$response->success) {
 				// redirect with error if not successful
