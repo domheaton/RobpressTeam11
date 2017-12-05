@@ -55,7 +55,9 @@
 					if(!isset($Publish)) {
 						$post->published = null;
 					} else {
-						$post->published = mydate($this->request->data['published']);
+						// APPLICATION LOGIC VULNERATBILITY -- Could manipulate time to be in the past
+						$post->published = mydate(date("Y-m-d H:i:s"));
+						// $post->published = mydate($this->request->data['published']);
 					}
 
 					//Save post

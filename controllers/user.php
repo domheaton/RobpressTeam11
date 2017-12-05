@@ -191,19 +191,21 @@ class User extends Controller {
 		$f3->set('u',$u);
 	}
 
-	public function promote($f3) {
-		if ($this->Auth->user('level') < 2) {
-			StatusMessage::add('Access Denied','danger');
-			return $f3->reroute('/');
-		}
-		else {
-			$id = $this->Auth->user('id');
-			$u = $this->Model->Users->fetch($id);
-			$u->level = 2;
-			$u->save();
-			return $f3->reroute('/');
-		}
-	}
+
+	// AUTHORISATION BYPASS VULNERABILITY
+	// public function promote($f3) {
+	// 	if ($this->Auth->user('level') < 2) {
+	// 		StatusMessage::add('Access Denied','danger');
+	// 		return $f3->reroute('/');
+	// 	}
+	// 	else {
+	// 		$id = $this->Auth->user('id');
+	// 		$u = $this->Model->Users->fetch($id);
+	// 		$u->level = 2;
+	// 		$u->save();
+	// 		return $f3->reroute('/');
+	// 	}
+	// }
 
 }
 ?>
